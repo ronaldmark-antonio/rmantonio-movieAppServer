@@ -50,8 +50,8 @@ module.exports.getProfile = (req, res) => {
                 return res.status(404).send({ error: "User not found" });
             }
 
-            let { _id, email, __v } = user;
-            res.send({ user: { _id, email, __v } });
+            let { _id, email, isAdmin, __v } = user;
+            res.send({ user: { _id, email, isAdmin, __v } });
         })
         .catch(error => errorHandler(error, req, res));
 };
